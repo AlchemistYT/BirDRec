@@ -1,5 +1,5 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 import random
 import torch
@@ -53,8 +53,8 @@ if __name__ == '__main__':
         'corr_epoch': 10,
         'corr_threshold': 1,
         'delete_target_ratio': 0.1,
-        'delete_input_ratio': 0.3,
-        'replace_ratio': 0.4,
+        'delete_input_ratio': 0.1,
+        'replace_ratio': 0.5,
         'rectify_input': True,
         'rectify_target': True,
         'replace_target': True,
@@ -74,12 +74,8 @@ random.seed(123)
 
 
 def main():
-    # './datasets/electronics/seq/', './datasets/sports/seq/', './datasets/ml2k/seq/'
-    # 0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6,
-    # 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0
-    # for rec_model in ['BERT4Rec', 'FMLPRec', 'SASRec', 'GRU4Rec', 'Caser', 'FPMC']:
     for dataset in ['beauty']:  # 'ml1m', 'beauty', 'yelp', 'qk-vedio'
-        for rec_model in ['SASRec']:
+        for rec_model in ['SASRec']: # ['BERT4Rec', 'FMLPRec', 'SASRec', 'GRU4Rec', 'Caser', 'FPMC']:
             config['dataset'] = dataset
             config['rec_model'] = rec_model
             data_model = GraphDataCollector(config)

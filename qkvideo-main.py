@@ -74,12 +74,10 @@ random.seed(123)
 
 
 def main():
-    # './datasets/electronics/seq/', './datasets/sports/seq/', './datasets/ml2k/seq/'
-    # 0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6,
-    # 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0
+
     # for rec_model in ['BERT4Rec', 'FMLPRec', 'SASRec', 'GRU4Rec', 'Caser', 'FPMC']:
     for dataset in ['qk-vedio']:  # 'ml1m', 'beauty', 'yelp', 'qk-vedio'
-        for rec_model in ['SASRec']:
+        for rec_model in ['SASRec']: # ['BERT4Rec', 'FMLPRec', 'SASRec', 'GRU4Rec', 'Caser', 'FPMC']:
             config['dataset'] = dataset
             config['rec_model'] = rec_model
             data_model = GraphDataCollector(config)
