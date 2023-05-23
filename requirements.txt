@@ -1,7 +1,6 @@
 apex==0.9.10dev
 matplotlib==3.7.1
 numpy==1.24.2
-numpy==1.17.4
 scipy==1.10.1
 seaborn==0.12.2
 torch==2.0.0
